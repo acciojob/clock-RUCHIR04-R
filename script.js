@@ -1,5 +1,5 @@
 //your JS code here. If required.
-function updater()
+function updateTimer()
 {
 	const now = new Date();
 	const options = {
