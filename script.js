@@ -1,13 +1,11 @@
-function updateTimer() {
+function updateTime() {
     const now = new Date();
-    const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
-    const formattedDate = now.toLocaleString('en-US', options);
-    document.getElementById('timer').innerText = formattedDate;
+    const dateString = now.toLocaleDateString();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById('timer').innerText = `${dateString} ${timeString}`;
 }
 
-// Update the timer every second
-setInterval(updateTimer, 1000);
-
-// Initial call to display the timer immediately
-updateTimer();
+// Update the timer immediately
 updateTime();
+// Set an interval to update the timer every second
+setInterval(updateTime, 1000);
